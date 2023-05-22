@@ -1,0 +1,30 @@
+<div class="flex justify-content-between flex-wrap">
+  <button mat-mini-fab color="primary" class="mt-1" (click)="newHero()">
+    <mat-icon>add</mat-icon>
+  </button>
+  <search-hero></search-hero>
+</div>
+
+<mat-divider></mat-divider>
+
+<div class="grid bm-8 pt-2">
+  <div *ngFor="let hero of heroes" class="col-6 sm:col-4 md:col-3 xl:col-2">
+    <heroes-hero-card
+      (onDelete)="onDelete(hero.id)"
+      [hero]="hero">
+    </heroes-hero-card>
+  </div>
+</div>
+
+<mat-divider></mat-divider>
+
+<mat-paginator #paginator
+               (page)="handlePageEvent($event)"
+               [length]="length"
+               [pageSize]="pageSize"
+               [disabled]="disabled"
+               [pageIndex]="pageIndex"
+               [showFirstLastButtons]="true"
+               [pageSizeOptions]="pageSizeOptions"
+               [hidePageSize]="false">
+</mat-paginator>

@@ -1,0 +1,22 @@
+.pag-toggles {
+  display: flex;
+  flex-direction: column;
+}
+
+.pag-toggles * {
+  margin-bottom: 16px;
+}
+
+.pag-options {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+}
+
+.pad-data * {
+  margin: 16px 0;
+}
+
+.pag-paginator {
+  width: 600px;
+}
